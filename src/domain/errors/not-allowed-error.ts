@@ -1,5 +1,5 @@
 class NotAllowedError extends Error {
-	constructor(message) {
+	constructor(message: string) {
 		super(message);
 		this.name = "NotAllowedError";
 		Object.setPrototypeOf(this, NotAllowedError.prototype);

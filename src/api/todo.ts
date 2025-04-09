@@ -5,7 +5,7 @@ import {
 	createTodo,
 	deleteTodo,
 	updateTodo,
-} from "../application/todo.js";
+} from "../application/todo";
 
 const todoRouter = express.Router();
 

@@ -1,10 +1,15 @@
-// import ValidationError from "../domain/errors/validation-error.js";
+// import ValidationError from "../domain/errors/validation-error";
 // import { CreateReviewDTO } from "../domain/dtos/review";
-import Todo from "../infrastructure/schemas/Todo.js";
+import { Request, Response, NextFunction } from "express";
+import Todo from "../infrastructure/schemas/Todo";
 import mongoose from "mongoose";
-import NotFoundError from "../domain/errors/not-found-error.js";
+import NotFoundError from "../domain/errors/not-found-error";
 
-export const getTodo = async (req, res, next) => {
+export const getTodo = async (
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
 	try {
 		const todos = await Todo.find().sort({ createdAt: -1 }).lean();
 
@@ -18,7 +23,11 @@ export const getTodo = async (req, res, next) => {
 	}
 };
 
-export const getTodoById = async (req, res, next) => {
+export const getTodoById = async (
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
 	try {
 		const todoId = req.params.id;
 
@@ -38,7 +47,11 @@ export const getTodoById = async (req, res, next) => {
 	}
 };
 
-export const createTodo = async (req, res, next) => {
+export const createTodo = async (
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
 	try {
 		const todo = req.body;
 
@@ -50,7 +63,11 @@ export const createTodo = async (req, res, next) => {
 	}
 };
 
-export const deleteTodo = async (req, res, next) => {
+export const deleteTodo = async (
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
 	try {
 		console.log("Not implemented yet");
 	} catch (error) {
@@ -58,7 +75,11 @@ export const deleteTodo = async (req, res, next) => {
 	}
 };
 
-export const updateTodo = async (req, res, next) => {
+export const updateTodo = async (
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
 	try {
 		console.log("Not implemented yet");
 	} catch (error) {

@@ -1,10 +1,16 @@
-import ValidationError from "../../domain/errors/validation-error.js";
-import NotFoundError from "../../domain/errors/not-found-error.js";
-import UnauthorizedError from "../../domain/errors/unauthorized-error.js";
-import ForbiddenError from "../../domain/errors/forbidden-error.js";
-import NotAllowedError from "../../domain/errors/not-allowed-error.js";
+import { ErrorRequestHandler, NextFunction, Request, Response } from "express";
+import ValidationError from "../../domain/errors/validation-error";
+import NotFoundError from "../../domain/errors/not-found-error";
+import UnauthorizedError from "../../domain/errors/unauthorized-error";
+import ForbiddenError from "../../domain/errors/forbidden-error";
+import NotAllowedError from "../../domain/errors/not-allowed-error";
 
-const globalErrorHandlingMiddleware = (err, req, res, next) => {
+const globalErrorHandlingMiddleware: ErrorRequestHandler = (
+	err: Error,
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
 	if (err instanceof ValidationError) {
 		res.status(400).json({ message: err.message });
 		return;

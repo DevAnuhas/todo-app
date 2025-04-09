@@ -1,11 +1,11 @@
 import "dotenv/config";
 import express from "express";
-import connectDB from "./infrastructure/db/connect.js";
+import connectDB from "./infrastructure/db/connect";
 import ora from "ora";
 
-import todoRouter from "./api/todo.js";
+import todoRouter from "./api/todo";
 
-import globalErrorHandlingMiddleware from "./api/middlewares/global-error-handling-middleware.js";
+import globalErrorHandlingMiddleware from "./api/middlewares/global-error-handling-middleware";
 
 // Create an Express instance
 const app = express();
