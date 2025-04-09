@@ -1,5 +1,5 @@
 class UnauthorizedError extends Error {
-	constructor(message: string) {
+	constructor(message) {
 		super(message);
 		this.name = "UnauthorizedError";
 		Object.setPrototypeOf(this, UnauthorizedError.prototype);

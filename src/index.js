@@ -5,7 +5,7 @@ import ora from "ora";
 
 import todoRouter from "./api/todo.js";
 
-// import globalErrorHandlingMiddleware from "./api/middlewares/global-error-handling-middleware";
+import globalErrorHandlingMiddleware from "./api/middlewares/global-error-handling-middleware.js";
 
 // Create an Express instance
 const app = express();
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.use("/api/todos", todoRouter);
 
 // Middleware to handle errors
-// app.use(globalErrorHandlingMiddleware);
+app.use(globalErrorHandlingMiddleware);
 
 // Define the port (Vercel will override this with its own PORT env variable)
 const PORT = process.env.PORT || 3000;

@@ -1,5 +1,5 @@
 class ForbiddenError extends Error {
-	constructor(message: string) {
+	constructor(message) {
 		super(message);
 		this.name = "ForbiddenError";
 		Object.setPrototypeOf(this, ForbiddenError.prototype);

@@ -1,5 +1,5 @@
 class ValidationError extends Error {
-	constructor(message: string) {
+	constructor(message) {
 		super(message);
 		this.name = "ValidationError";
 		Object.setPrototypeOf(this, ValidationError.prototype);

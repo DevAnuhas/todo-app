@@ -1,6 +1,8 @@
-// import ValidationError from "../domain/errors/validation-error";
+// import ValidationError from "../domain/errors/validation-error.js";
 // import { CreateReviewDTO } from "../domain/dtos/review";
 import Todo from "../infrastructure/schemas/Todo.js";
+import mongoose from "mongoose";
+import NotFoundError from "../domain/errors/not-found-error.js";
 
 export const getTodo = async (req, res, next) => {
 	try {
@@ -8,6 +10,26 @@ export const getTodo = async (req, res, next) => {
 
 		if (!todos) {
 			throw new Error("Todos not found");
+		}
+
+		res.status(200).json(todos);
+	} catch (error) {
+		next(error);
+	}
+};
+
+export const getTodoById = async (req, res, next) => {
+	try {
+		const todoId = req.params.id;
+
+		if (!mongoose.Types.ObjectId.isValid(todoId)) {
+			throw new NotFoundError("Todo not found");
+		}
+
+		const todos = await Todo.findById(todoId).lean();
+
+		if (!todos) {
+			throw new NotFoundError("Todos not found");
 		}
 
 		res.status(200).json(todos);

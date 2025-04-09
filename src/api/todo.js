@@ -1,6 +1,7 @@
 import express from "express";
 import {
 	getTodo,
+	getTodoById,
 	createTodo,
 	deleteTodo,
 	updateTodo,
@@ -8,11 +9,7 @@ import {
 
 const todoRouter = express.Router();
 
-todoRouter
-	.route("/")
-	.get(getTodo)
-	.post(createTodo)
-	.delete(deleteTodo)
-	.patch(updateTodo);
+todoRouter.route("/").get(getTodo).post(createTodo);
+todoRouter.route("/:id").get(getTodoById).delete(deleteTodo).patch(updateTodo);
 
 export default todoRouter;
