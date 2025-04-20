@@ -1,10 +1,6 @@
 # Todo App API
 
-This project is a RESTful API for a Todo application, built using Node.js and Express. It serves as the backend for a Todo frontend application and includes all standard CRUD operations with proper error handling, data validation, and database integration using MongoDB.
-
-## Task Description
-
-The goal of this project is to demonstrate the ability to implement a robust and well-structured RESTful API. The focus is on proper API design, error handling, and data validation while adhering to RESTful principles.
+This project is a **RESTful API** for a Todo application, built using Node.js and Express. It serves as the backend for a Todo frontend application and includes all standard CRUD operations with proper error handling, data validation, and database integration using MongoDB.
 
 ### Core Features
 
@@ -19,7 +15,6 @@ The goal of this project is to demonstrate the ability to implement a robust and
 - **RESTful Architecture**: Adheres to REST principles for API design.
 - **Consistent Response Formatting**: Ensures uniformity in API responses.
 - **Code Organization**: Structured codebase for maintainability and scalability.
-- **MongoDB Integration**: Replaced in-memory storage with MongoDB for persistent data storage.
 - **Schema Design**: Used Mongoose to define a robust schema for todos.
 
 ## Getting Started
@@ -27,13 +22,38 @@ The goal of this project is to demonstrate the ability to implement a robust and
 ### Prerequisites
 
 - Node.js (v16 or higher)
-- npm (v8 or higher)
-- MongoDB (local or cloud instance)
 
 ### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/DevAnuhas/todo-app-api.git
-   cd todo-app-api
-   ```
+
+```bash
+git clone https://github.com/DevAnuhas/todo-app-api.git
+```
+
+2. Install dependencies:
+
+```bash
+cd todo-app-api
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the root directory and add the following:
+
+```env
+MONGODB_URI=<your_mongodb_connection_string>
+```
+
+### Running the Application
+
+1. Start the backend server
+
+```bash
+npm run dev
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
