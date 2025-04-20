@@ -48,8 +48,6 @@ MONGODB_URI=<your_mongodb_connection_string>
 
 ### Running the Application
 
-1. Start the backend server
-
 ```bash
 npm run dev
 ```
